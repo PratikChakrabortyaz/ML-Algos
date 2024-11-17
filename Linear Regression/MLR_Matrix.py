@@ -1,0 +1,20 @@
+x1 = np.array([3, 4, 5, 6, 2])
+x2 = np.array([8, 5, 7, 3, 1])
+y = np.array([-3.7, 3.5, 2.5, 11.5, 5.7])
+X=np.vstack([np.ones_like(x1),x1,x2]).T
+print(X)
+X_T_X=np.dot(X.T,X)
+print(X_T_X)
+X_T_Y=np.dot(X.T,y)
+print(X_T_Y)
+B=np.dot(np.linalg.inv(X_T_X),X_T_Y)
+print(B)
+b0,b1,b2=B
+print(f"b0={b0}")
+print(f"b1={b1}")
+print(f"b2={b2}")
+y_pred=b0+b1*x1+b2*x2
+mse=np.mean((y-y_pred)**2)
+rmse=np.sqrt(mse)
+print(f"mse={mse}")
+print(f"rmse={rmse}")
