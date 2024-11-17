@@ -66,8 +66,16 @@ To get started, clone the repository:
 ```bash
 git clone https://github.com/your-username/ML-Algos.git
 cd ML-Algos
-Also, make sure to import the following libraries in your Python scripts:
+### Install Dependencies
+
+This project requires the following libraries:
 
 - **NumPy**: For numerical operations.
 - **Pandas**: For handling datasets and dataframes.
 - **Matplotlib**: For visualizations.
+
+All dependencies are listed in the `requirements.txt` file. You can install them by running:
+```bash
+pip install -r requirements.txt
+
+
