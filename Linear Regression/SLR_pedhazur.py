@@ -1,0 +1,21 @@
+x = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+y = np.array([3, 4, 8, 8, 14, 12, 17, 19, 22, 24])
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+b1_num=np.sum((x-x_mean)*(y-y_mean))
+b1_den=np.sum((x-x_mean)**2)
+b1=b1_num/b1_den
+b0=y_mean-b1*x_mean
+print(f"b0={b0}")
+print(f"b1={b1}")
+y_pred=b0+b1*x
+mse=np.mean((y-y_pred)**2)
+rmse=np.sqrt(mse)
+print(f"mse={mse}")
+print(f"rmse={rmse}")
+plt.scatter(x,y,color='red')
+plt.title("Pedhazur Method")
+plt.plot(x,y_pred,color='blue')
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
